@@ -10,6 +10,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "command-line-args": "^5.1.1",
+    "draftlog": "^1.0.12",
+    "fs-extra": "^9.0.1",
+    "gm": "^1.23.1",
+    "image-difference": "^2.0.7",
+    "lodash": "^4.17.20",
+    "ora": "^5.1.0"
+  },
   "author": "Xavier Villelégier",
   "license": "ISC"
 }
