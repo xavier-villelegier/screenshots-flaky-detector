@@ -16,11 +16,10 @@ const run = async () => {
 
   const flakyDetector = new FlakyDetector(commandLineArgs(options))
 
-  await flakyDetector.emptyScreenshotsDirectory()
+  await flakyDetector.init()
   await flakyDetector.runReferenceTest()
   await flakyDetector.runFlakyTests()
 
-  // Write report
   flakyDetector.writeReport()
   process.exit(flakyDetector.exitCode)
 }
