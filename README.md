@@ -6,7 +6,6 @@ You need to install `imagemagick` used by Argos to compute diffs:
 brew install imagemagick
 ```
 
-
 ## How to use it
 
 Simply pick your test path as you'd do with `rails test`, and run for example:
