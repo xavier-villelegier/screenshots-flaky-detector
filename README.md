@@ -1,6 +1,6 @@
 ## Prerequisit
 
-You need to install `imagemagick` used by Argos to compute diffs:
+You need to install `imagemagick` used to compute diffs:
 
 ```
 brew install imagemagick
