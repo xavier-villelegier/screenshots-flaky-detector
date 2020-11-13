@@ -11,12 +11,20 @@ require('draftlog').into(console)
 class FlakyDetector {
   constructor(options) {
     this.options = options
-    console.log(options)
+    this.options.ouput = options.ouput || options.directory
+    this.log(options)
     this.screenshots = {}
   }
 
-  async emptyScreenshotsDirectory() {
-    await fs.emptyDir(this.options.directory)
+  log = (...params) => this.options.verbose && console.log(...params)
+
+  init() {
+    const { directory, output } = this.options
+
+    if (!fs.existsSync(directory)) fs.mkdirSync(directory)
+    else fs.emptyDirSync(directory)
+
+    if (!fs.existsSync(output)) fs.mkdirSync(output)
   }
 
   // Execute reference test
@@ -24,12 +32,12 @@ class FlakyDetector {
     const { command, directory } = this.options
     const referenceTestLoader = loadingText(`Executing reference test ${command}...`)
     const res = await execShellCommand(command).catch(error => {
-      console.log(error)
+      this.log(error)
       referenceTestLoader.fail()
       referenceTestLoader.text = `Your test fails : ${error}\n`
       process.exit(1)
     })
-    console.log(res)
+    this.log(res)
     referenceTestLoader.text = 'Reference test run successfully'
     referenceTestLoader.succeed()
 
@@ -92,7 +100,7 @@ class FlakyDetector {
         })
       )
     } catch (error) {
-      console.log(error)
+      this.log(error)
       // Error for all screenshots of the round i
       Object.keys(this.screenshots).map(key => screenshots[key].error++)
     }
