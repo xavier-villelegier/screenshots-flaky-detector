@@ -7,9 +7,6 @@
     "type": "git",
     "url": "git+https://github.com/xavier-villelegier/screenshots-flaky-detector.git"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
     "colors": "^1.4.0",
     "command-line-args": "^5.1.1",
