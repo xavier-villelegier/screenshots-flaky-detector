@@ -1,6 +1,6 @@
 {
   "name": "screenshots-flaky-detector",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "Help detect non-regression screenshots flakyness",
   "main": "src/index.js",
   "bin": "src/index.js",
