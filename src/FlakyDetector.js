@@ -32,9 +32,8 @@ class FlakyDetector {
     const { command, directory } = this.options
     const referenceTestLoader = loadingText(`Executing reference test ${command}...`)
     const res = await execShellCommand(command).catch(error => {
-      this.log(error)
       referenceTestLoader.fail()
-      referenceTestLoader.text = `Your test fails : ${error}\n`
+      console.log(error.toString().red);
       process.exit(1)
     })
     this.log(res)
