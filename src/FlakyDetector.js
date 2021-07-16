@@ -101,7 +101,7 @@ class FlakyDetector {
     } catch (error) {
       this.log(error)
       // Error for all screenshots of the round i
-      Object.keys(this.screenshots).map(key => screenshots[key].error++)
+      Object.keys(this.screenshots).map(key => this.screenshots[key].error++)
     }
   }
 
