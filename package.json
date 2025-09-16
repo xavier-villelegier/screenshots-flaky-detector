@@ -18,6 +18,11 @@
     "lodash": "^4.17.20",
     "ora": "^5.1.0"
   },
+  "overrides": {
+    "image-difference": {
+      "cross-spawn": "^7.0.6"
+    }
+  },
   "author": "Xavier Villelégier",
   "license": "ISC"
 }
